@@ -13,7 +13,7 @@
  * 
  */
 
-#define DELAYTIME   100
+#define DELAYTIME   200
 #define LED_PORT    PORTB
 #define LED_PIN     PINB
 #define LED_DDR     DDRB
@@ -24,13 +24,13 @@ int main (void) {
     
     while (1) {
    
-        while(i < 8) {
-            PORTB = (1 << i);
+        while(i < 7) {
+            PORTB |= (1 << i);
             _delay_ms(DELAYTIME);
             i++;
         }
         while (i > 0) {
-            PORTB = (1 << i);
+            PORTB  = (1 << i);
             _delay_ms(DELAYTIME);
             i--;
         }
