@@ -28,23 +28,28 @@ int main (void) {
     
     while (1) {
         
-        if (LED_PIND & (1 << PIND0)) {
-            LED_PORTB = 0b11000011;
-            _delay_ms(DELAYTIME);
-            LED_PORTB &= ~(1 << PORTB1);
-            _delay_ms(DELAYTIME);
-        }   else {
+            if (LED_PIND & (1 << PIND0)) {
+                LED_PORTB = 0b11000011;
+                _delay_ms(DELAYTIME);
+                LED_PORTB &= ~(1 << PORTB1);
+                _delay_ms(DELAYTIME);
+            } else if (LED_PIND & (1 << PIND1)) {
+                LED_PORTB = 0b11000011;
+                 _delay_ms(DELAYTIME);
+                LED_PORTB &= ~(4 << PORTB1);
+                _delay_ms(DELAYTIME);
+            } else {
 
-                while(i < 7) {
-                    LED_PORTB = (1 << i);
-                    _delay_ms(DELAYTIME);
-                    i++;
-                }
-                while (i > 0) {
-                    LED_PORTB = (1 << i);
-                    _delay_ms(DELAYTIME);
-                    i--; 
-                }
+            while(i < 7) {
+                LED_PORTB = (1 << i);
+                _delay_ms(DELAYTIME);
+                i++;
+            }
+            while (i > 0) {
+                LED_PORTB = (1 << i);
+                _delay_ms(DELAYTIME);
+                i--; 
+            }
             }   
     }
 }
