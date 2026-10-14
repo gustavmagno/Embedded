@@ -20,3 +20,10 @@ funclist
 nbproject/Makefile-*
 disassembly/
 *.map
+.generated_files/
+build/
+dist/
+debug/
+*.o
+*.d
+nbproject/private/
