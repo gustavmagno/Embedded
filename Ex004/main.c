@@ -35,8 +35,9 @@ int main (void) {
                 _delay_ms(DELAYTIME);
             } else if (LED_PIND & (1 << PIND1)) {
                 LED_PORTB = 0b11000011;
+                LED_PORTB |= (5 << PORTB1);
                  _delay_ms(DELAYTIME);
-                LED_PORTB &= ~(4 << PORTB1);
+                LED_PORTB &= ~(5 << PORTB1);
                 _delay_ms(DELAYTIME);
             } else {
 
